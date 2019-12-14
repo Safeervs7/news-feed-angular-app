@@ -8,18 +8,24 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LayoutComponent } from './layout/layout.component';
 
+import { NewsFeedService } from './service/news-feed.service';
+import { CardsModule } from './cards/cards.module';
+import { CardsComponent } from './cards/cards.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LayoutComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HeaderModule
+    HeaderModule,
+    CardsModule
   ],
-  providers: [],
+  providers: [NewsFeedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
