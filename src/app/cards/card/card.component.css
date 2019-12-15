@@ -1,0 +1,10 @@
+.card{
+    height: 100px;
+    overflow: hidden;
+}
+
+.card:hover{
+    overflow: auto;
+}
+
+

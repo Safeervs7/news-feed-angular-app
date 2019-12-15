@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
+import { NewsFeedService } from '../../service/news-feed.service';
+
 @Component({
   selector: 'manage-news-feed',
   templateUrl: './manage-news-feed.component.html',
@@ -8,13 +10,17 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 export class ManageNewsFeedComponent implements OnInit, OnChanges {
   @Input() newsFeed:string = "";
   valid: boolean = false;
-  constructor() { }
+  constructor( private newsFeedService: NewsFeedService ) { }
 
   ngOnInit() {
   }
 
   createNewsFeed(){
-    console.log("createNewsFeed", this.newsFeed, this.valid);
+    if(this.valid){
+      this.newsFeedService.create(this.newsFeed);
+      this.valid = false;
+      this.newsFeed = "";
+    }
   }
 
   ngOnChanges(){

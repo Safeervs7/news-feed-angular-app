@@ -6,10 +6,14 @@ import { Injectable } from '@angular/core';
 export class NewsFeedService {
   newsFeeds:string[];
   constructor() {
+    this.newsFeeds = ['asldlkfsafdk asldlkfsafdk asldlkfsafdk asldlkfsafdk asldlkfsafdk asldlkfsafdk asldlkfsafdk asldlkfsafdk', 'asldlkfsafdk asldlkfsafdk asldlkfsafdk asldlkfsafdk asldlkfsafdk asldlkfsafdk asldlkfsafdk asldlkfsafdk', 'card3', 'card3']
   }
 
   getNewsFeeds(){
-    this.newsFeeds = ['card1', 'card2', 'card3',]
     return this.newsFeeds;
+  }
+
+  create(newsFeed:string){
+    this.newsFeeds.push(newsFeed);
   }
 }
