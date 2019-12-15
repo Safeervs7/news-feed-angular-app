@@ -1,10 +1,20 @@
 .card{
-    height: 100px;
+    height: 200px;
     overflow: hidden;
 }
 
 .card:hover{
     overflow: auto;
+}
+
+.card-footer{
+    background-color: transparent;
+    border-top: 0px solid rgba(0, 0, 0, 0.125);
+    display: none;
+}
+
+.card:hover .card-footer{
+    display: block;
 }
 
 
