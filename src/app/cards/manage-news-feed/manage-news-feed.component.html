@@ -1,0 +1,8 @@
+<div class="content-wrapper">
+    <form (ngSubmit)="createNewsFeed()" #createForm="ngForm">
+        <div class="form-group">
+            <input  [(ngModel)]="newsFeed" [ngClass]="{valid: valid, invalid: !valid}" type="text" (ngModelChange)="isValid()" class="form-control news-feed" placeholder="Create a news feed" required name="newsFeed">
+        </div>
+        <button [disabled]="!valid" (click)="createNewsFeed()" type="button" class="btn btn-small btn-primary">Submit</button>
+    </form>
+</div>
