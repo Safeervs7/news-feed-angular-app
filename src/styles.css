@@ -4,3 +4,7 @@
 .content-wrapper{
     padding: 20px;
 }
+
+textarea.form-control {
+    height: 200px!important;
+}
