@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, OnInit, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, AfterViewInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -9,7 +9,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class ModalComponent implements OnInit, AfterViewInit {
   title:string = "";
   content:string = "";
-  @ViewChild('modalBody', {static: false}) modalBody: any;
+  @ViewChild('modalBody', {static: false}) modalBody: ElementRef;
   constructor( public activeModal: NgbActiveModal ) { }
 
   ngOnInit() {
@@ -17,7 +17,10 @@ export class ModalComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.modalBody.nativeElement.insertAdjacentHTML('beforeend', this.content);
-    console.log(this.modalBody.nativeElement);
+  }
+
+  updateNewsFeed(value){
+    console.log(value);
   }
 
 }

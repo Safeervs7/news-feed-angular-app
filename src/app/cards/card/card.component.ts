@@ -8,6 +8,8 @@ import { ModalComponent } from '../../modal/modal.component';
 })
 export class CardComponent implements OnInit {
   @Input() details:string;
+  @Input() index:number;
+  category:string ="";
   constructor( 
     private modalService: NgbModal 
   ) { }
@@ -15,11 +17,11 @@ export class CardComponent implements OnInit {
   ngOnInit() {
   }
 
-  edit(value){
-    console.log(value);
+  edit(value:string, id:number){
+    console.log(id);
     const modalRef = this.modalService.open(ModalComponent);
     modalRef.componentInstance.title = 'Edit';
-    modalRef.componentInstance.content = '<textarea autofocus class="form-control" type="text">'+value+'</textarea>';
+    modalRef.componentInstance.content = '<textarea [attr.data-id]="'+ id +'" autofocus class="form-control" type="text">'+value+'</textarea>';
   }
 
 }

@@ -1,11 +1,11 @@
 <div class="card scroll">
-    <div class="card-body" #cardBody>
+    <div [attr.data-id]="index" class="card-body" #cardBody>
         {{details}}
     </div>
     <div class="card-footer">
         <div class="row">
             <div class="col-lg-6 text-center">
-                <button (click)="edit(cardBody.innerText)" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                <button (click)="edit(cardBody.innerText, cardBody.dataset.id)" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
             </div>
             <div class="col-lg-6 text-center">
                 <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
